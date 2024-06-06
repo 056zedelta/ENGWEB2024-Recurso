@@ -7,7 +7,6 @@ html
     header(class="w3-container w3-teal")
       h1 Detalhes do Autor #{id} : #{author}
     div(class="w3-container")
-      a(href="/", class="w3-button w3-teal") Voltar à lista
       table(class="w3-table-all w3-hoverable")
         thead
           tr(class="w3-light-grey")
@@ -20,7 +19,7 @@ html
               td #{livro.title}
               td #{livro.publishDate}
               td #{livro.pages}
-      p Somatório Total de Livros: #{somatorio}
+      p Somatório Total de Livros: #{livros.length}
       a(href="/", class="w3-button w3-teal") Voltar à página principal
     footer.w3-container.w3-teal
       address Gerado por EngWeb2024 em #{data}
