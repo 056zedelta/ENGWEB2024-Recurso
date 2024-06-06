@@ -21,8 +21,10 @@ html
             tr
               td: a(href=`/${livro._id}`, class="w3-text-blue") #{livro._id}
               td #{livro.title}
-              td: a(href=`/authors/${livro.author}`, class="w3-text-blue") #{livro.author}
-              td #{livro.publishDate}
+              td
+                each author in livro.author
+                  a(href=`/authors/${author}`, class="w3-text-blue") #{author}
+                  | ,&nbsp;
               td #{livro.pages}
       footer.w3-container.w3-teal
         address Gerado por EngWeb2024 em #{data}
