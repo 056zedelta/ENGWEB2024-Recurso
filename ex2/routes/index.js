@@ -39,12 +39,10 @@ function calcularQuantidadeLivros(livros, author) {
 
 router.get('/authors/:id', function(req, res) {
   var d = new Date().toISOString().substring(0,16)
-  axios.get('http://localhost:17000/books?author='+ req.params.id)
+  axios.get('http://localhost:17000/books?authors='+ req.params.id)
                     .then(resposta => {
                       var somatorio = calcularQuantidadeLivros(resposta.data);
-                      res.render('author', { author: resposta.data, somatorio, data: d, id: resposta.data[0]._id,
-                      title: resposta.data[0].title});
-
+                      res.render('author', { livros: resposta.data, somatorio, data: d, author: req.params.id});
                     })
                     .catch( erro => {
                       res.render('error', {error: erro, message: 'Erro ao recuperar o contrato'})

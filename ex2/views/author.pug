@@ -7,18 +7,19 @@ html
     header(class="w3-container w3-teal")
       h1 Detalhes do Autor #{id} : #{author}
     div(class="w3-container")
+      a(href="/", class="w3-button w3-teal") Voltar à lista
       table(class="w3-table-all w3-hoverable")
         thead
           tr(class="w3-light-grey")
             th Título
-            th Série
-            th Rating
+            th Data de Publicação
+            th Páginas
         tbody
           each livro in livros
             tr
               td #{livro.title}
-              td #{livro.series}
-              td #{livro.rating}
+              td #{livro.publishDate}
+              td #{livro.pages}
       p Somatório Total de Livros: #{somatorio}
       a(href="/", class="w3-button w3-teal") Voltar à página principal
     footer.w3-container.w3-teal
