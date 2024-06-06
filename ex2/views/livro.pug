@@ -1,0 +1,94 @@
+doctype html
+html
+    head
+        title Detalhes do Livro #{livro._id}
+        link(rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css")
+    body
+        header(class="w3-container w3-teal")
+            h1 Detalhes do Livro #{livro._id}
+        div(class="w3-container")
+            a(href="/", class="w3-button w3-teal") Voltar à lista
+            img(class="cover-image" src=livro.coverImg, alt="Imagem da Capa")            
+            p
+                strong ID Livro:
+                | #{livro._id}
+            p
+                strong Título:
+                | #{livro.title}
+            p
+                strong Série:
+                | #{livro.series}
+            p
+                strong Autor:
+                | #{livro.author.join(', ')}
+            p
+                strong Classificação:
+                | #{livro.rating}
+            p
+                strong Descrição:
+                | #{livro.description}
+            p
+                strong Idioma:
+                | #{livro.language}
+            p
+                strong ISBN:
+                | #{livro.isbn}
+            p
+                strong Gêneros:
+                | #{livro.genres.join(', ')}
+            p
+                strong Personagens:
+                | #{livro.characters.join(', ')}
+            p
+                strong Formato do Livro:
+                | #{livro.bookFormat}
+            p
+                strong Edição:
+                | #{livro.edition}
+            p
+                strong Páginas:
+                | #{livro.pages}
+            p
+                strong Editora:
+                | #{livro.publisher}
+            p
+                strong Data de Publicação:
+                | #{livro.publishDate}
+            p
+                strong Primeira Data de Publicação:
+                | #{livro.firstPublishDate}
+            p
+                strong Prêmios:
+                | #{livro.awards.join(', ')}
+            p
+                strong Número de Avaliações:
+                | #{livro.numRatings}
+            p
+                strong Avaliações por Estrelas:
+                | #{livro.ratingsByStars.join(', ')}
+            p
+                strong Percentual de Curtidas:
+                | #{livro.likedPercent}
+            p
+                strong Configuração:
+                | #{livro.setting.join(', ')}
+            p
+                strong Pontuação BBE:
+                | #{livro.bbeScore}
+            p
+                strong Votos BBE:
+                | #{livro.bbeVotes}
+            p
+                strong Preço:
+                | #{livro.price}
+            p
+                strong _id:
+                | #{livro._id}
+        footer(class="w3-container w3-teal")
+            address Gerado por EngWeb2024 em #{data}
+
+    style.
+        .cover-image {
+            float: left;
+            margin-right: 10px; 
+        }
